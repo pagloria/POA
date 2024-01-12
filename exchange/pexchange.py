@@ -68,7 +68,7 @@ def get_exchange(exchange_name: str, kis_number=None):
 def get_bot(
     exchange_name: Literal["BINANCE", "UPBIT", "BYBIT", "BITGET", "KRX", "NASDAQ", "NYSE", "AMEX", "OKX"],
     kis_number=None,
-) -> Binance | Upbit | Bybit | Bitget | KoreaInvestment | Okx:
+) -> Binance | Upbit | Bybit | Bitget | KoreaInvestment | Okx | Bithumb:
     exchange_name = exchange_name.upper()
     if exchange_name in CRYPTO_EXCHANGES:
         return get_exchange(exchange_name, kis_number).dict()[exchange_name]
@@ -115,7 +115,7 @@ def retry(
     order_info: MarketOrder,
     max_attempts=3,
     delay=1,
-    instance: Binance | Bybit | Bitget | Upbit | Okx = None,
+    instance: Binance | Bybit | Bitget | Upbit | Okx | Bithumb= None,
 ):
     attempts = 0
 
