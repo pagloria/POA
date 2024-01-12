@@ -75,6 +75,8 @@ def log_order_message(exchange_name, order_result: dict, order_info: MarketOrder
         if order_info.amount is not None:
             if exchange_name == "UPBIT":
                 amount = str(order_result.get("cost"))
+            elif exchange_name =="BITHUMB":
+                amount = str(order_result.get("cost"))
             elif exchange_name == "BITGET":
                 amount = str(order_info.amount * order_info.price)
             elif exchange_name == "BYBIT":

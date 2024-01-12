@@ -5,6 +5,7 @@ from fastapi import HTTPException
 from pydantic import BaseModel
 from .binance import Binance
 from .upbit import Upbit
+from .bithumb import Bithumb
 from .bybit import Bybit
 from .bitget import Bitget
 from .okx import Okx
@@ -17,7 +18,6 @@ import time
 from devtools import debug
 from loguru import logger
 
-
 from .model import CRYPTO_EXCHANGES, STOCK_EXCHANGES, MarketOrder
 
 
@@ -27,6 +27,7 @@ class Exchange(BaseModel):
     BYBIT: Bybit | None = None
     BITGET: Bitget | None = None
     OKX: Okx | None = None
+    BITHUMB: Bithumb | None = None
     KIS1: KoreaInvestment | None = None
     KIS2: KoreaInvestment | None = None
     KIS3: KoreaInvestment | None = None
